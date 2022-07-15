@@ -20,4 +20,3 @@ public class BasePage {
         js = (JavascriptExecutor) driver;
     }
 }
-
