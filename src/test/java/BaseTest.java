@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import pages.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +16,7 @@ import java.util.Properties;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
     protected WebDriver driver;
-    //protected HomePage homePage;
+    protected HomePage homePage;
     //protected String fixEmail = "testuser@test.com";
 
     @BeforeAll
@@ -38,11 +39,11 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-//    @BeforeEach
-//    public void loadHomePage() {
-//        homePage = new HomePage(driver);
-//        homePage.load();
-//    }
+    @BeforeEach
+    public void loadHomePage() {
+        homePage = new HomePage(driver);
+        homePage.load();
+    }
 
     @AfterAll
     public void tearDown() {
