@@ -17,6 +17,8 @@ import java.util.Properties;
 public class BaseTest {
     protected WebDriver driver;
     protected HomePage homePage;
+    protected SearchResultsPage searchResultsPage;
+
     //protected String fixEmail = "testuser@test.com";
 
     @BeforeAll
@@ -43,6 +45,7 @@ public class BaseTest {
     public void loadHomePage() {
         homePage = new HomePage(driver);
         homePage.load();
+        searchResultsPage = new SearchResultsPage(driver);
     }
 
     @AfterAll
