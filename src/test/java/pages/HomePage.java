@@ -11,6 +11,10 @@ public class HomePage extends BasePage {
 
     @FindBy(tagName = "title")
     private WebElement title;
+    @FindBy(name = "dc_creator")
+    private WebElement authorNameField;
+    @FindBy(name = "Image3")
+    private WebElement searchButton;
 
     public void load() {
         driver.get(baseUrl);
@@ -18,5 +22,13 @@ public class HomePage extends BasePage {
 
     public String getTitle() {
         return driver.getTitle();
+    }
+
+    public void enterAuthorName(String name){
+        authorNameField.sendKeys(name);
+    }
+
+    public void clickSearch(){
+        searchButton.click();
     }
 }
