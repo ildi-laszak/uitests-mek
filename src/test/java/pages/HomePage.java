@@ -24,11 +24,8 @@ public class HomePage extends BasePage {
         return driver.getTitle();
     }
 
-    public void enterAuthorName(String name){
+    public void searchByAuthorName(String name){
         authorNameField.sendKeys(name);
-    }
-
-    public void clickSearch(){
         searchButton.click();
     }
 }

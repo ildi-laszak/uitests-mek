@@ -11,8 +11,9 @@ public class TC02_SuccessfulSearchByAuthorName extends BaseTest {
     @DisplayName("Successful search by Author keyword")
     @Description("The Results Page should load successfully")
     public void successfulPageLoad() {
-        homePage.enterAuthorName("Szerb Antal");
-        homePage.clickSearch();
+        LOG.info("Filling in author Name field form and clicking search button");
+        homePage.searchByAuthorName("Szerb Antal");
+        LOG.info("Asserting if SearchResultsPage is loaded");
         assertThat(searchResultsPage.isLoaded()).isTrue();
     }
 }

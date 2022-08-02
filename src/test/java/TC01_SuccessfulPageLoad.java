@@ -11,6 +11,7 @@ public class TC01_SuccessfulPageLoad extends BaseTest{
     @DisplayName("Successful page load")
     @Description("The Homepage should load successfully")
     public void successfulPageLoad(){
+        LOG.info("Asserting if HomePage is loaded");
         assertThat(homePage.getTitle()).isEqualTo("MEK (Magyar Elektronikus Könyvtár)");
     }
 }
